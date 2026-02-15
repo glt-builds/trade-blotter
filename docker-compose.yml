@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: trade-blotter-db
+    environment:
+      POSTGRES_DB: tradeblotter
+      POSTGRES_USER: trader
+      POSTGRES_PASSWORD: trader123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
