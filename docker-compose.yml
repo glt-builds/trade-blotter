@@ -11,5 +11,17 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  app:
+    build: .
+    container_name: trade-blotter-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tradeblotter
+      SPRING_DATASOURCE_USERNAME: trader
+      SPRING_DATASOURCE_PASSWORD: trader123
+    depends_on:
+      - postgres
+
 volumes:
   pgdata:
