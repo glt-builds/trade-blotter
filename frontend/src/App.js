@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-const API = 'http://localhost:8080/api/trades';
+const API = 'http://13.192.188.24:8080/api/trades';
 
 function App() {
   const [trades, setTrades] = useState([]);
